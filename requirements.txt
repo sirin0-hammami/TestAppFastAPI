@@ -1,11 +1,6 @@
-docker==5.0.3
-docker-compose==1.29.2
-dockerpty==0.4.1
-docopt==0.6.2
+
 fastapi==0.90.0
-psycopg2==2.9.5
-requests==2.25.1
+psycopg2
 SQLAlchemy==2.0.2
-starlette==0.23.0
 uvicorn==0.20.0
-websocket-client==0.32.0
+
