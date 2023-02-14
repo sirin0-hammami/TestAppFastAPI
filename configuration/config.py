@@ -1,4 +1,7 @@
 from pydantic import BaseSettings
+from pydantic import BaseConfig
+
+BaseConfig.arbitrary_types_allowed = True
 
 class Settings(BaseSettings):
     DATABASE_PORT: int

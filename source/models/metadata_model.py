@@ -1,9 +1,10 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
-from database import Base
 from sqlalchemy import TIMESTAMP, Column, ForeignKey, String, Boolean, text
 from uuid import uuid4
-
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.postgresql import UUID
+
+Base = declarative_base()
 
 class Metadata(Base):
     __tablename__ = 'metadata'

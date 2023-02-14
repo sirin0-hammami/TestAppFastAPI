@@ -1,32 +1,50 @@
 version: '3'
 services:
+
   postgres:
+
     image: postgres
+
     container_name: fastapi_postgres
+
     ports:
       - '5432:5432'
+
     restart: always
+
     environment:
       POSTGRES_HOST_AUTH_METHOD : "trust"
 
     volumes:
       - postgres-db:/var/lib/postgresql/data
+
+
   pgadmin:
+
     image: dpage/pgadmin4 
+
     ports: 
        - "8006:80"
+
     environment: 
       PGADMIN_DEFAULT_EMAIL: "postgres@postgres.com" 
       PGADMIN_DEFAULT_PASSWORD: "password123"
       PGADMIN_CONFIG_SERVER_MODE: 'False'
+
+
   web:
+
     build: .
+
     ports:
       - "8000:8000"
+
     depends_on:
       - postgres
+
     links : 
       - "postgres:postgres"
+
     environment:
       DATABASE_PORT : "5432"
       POSTGRES_PASSWORD: "password123"
@@ -35,6 +53,8 @@ services:
       POSTGRES_HOST : "postgres"
       POSTGRES_HOSTNAME : "postgres"
       POSTGRES_HOST_AUTH_METHOD : "trust"
+
+      
 volumes:
   postgres-db:
 
