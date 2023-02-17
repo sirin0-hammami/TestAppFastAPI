@@ -1,5 +1,5 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
-from sqlalchemy import TIMESTAMP, Column, ForeignKey, String, Boolean, text
+from sqlalchemy import Column,String
+from sqlalchemy import Column, String
 from uuid import uuid4
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.postgresql import UUID

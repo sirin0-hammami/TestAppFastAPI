@@ -1,6 +1,6 @@
 from pydantic import BaseModel 
 
-class Data_schema(BaseModel):
+class Metadata_schema(BaseModel):
     people = ""
     places = ""
     context = "" 
