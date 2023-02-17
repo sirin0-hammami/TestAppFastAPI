@@ -30,10 +30,7 @@ async def get_metadata_by_id(id : str , db: Session = Depends(my_db.get_db)):
     
 @meta_router.post("/api/metadata", response_model=Metadata)
 async def add_metadata(metadata : Metadata_schema , db: Session = Depends(my_db.get_db)):
-    try :
-      return meta_services.post_metadata(id, db)
-    except NotFoundException : 
-        raise HTTPException(status_code=404, detail="data not found") 
+    return meta_services.post_metadata(metadata , db)
 
 @meta_router.delete("/api/metadata/{id}" , response_model=Metadata)
 async def remove_metadata(id : str, db: Session = Depends(my_db.get_db)):
